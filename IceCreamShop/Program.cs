@@ -11,7 +11,6 @@ namespace IceCreamShop
             Case menu = new Case();
             List<Flavor> availableFlavors = menu.Flavors;
             List<Cone> availableCones = menu.Cones;
-            List<Ingredient> availableIngredients = menu.Ingredients;
 
             FlavorComparer compareFlavors = new FlavorComparer();
             availableFlavors.Sort(compareFlavors);
@@ -27,12 +26,7 @@ namespace IceCreamShop
                 Console.WriteLine(c);
             }
 
-            IngredientComparer compareIngredients = new IngredientComparer();
-            availableIngredients.Sort(compareIngredients);
-            foreach (Ingredient allergens in availableIngredients)
-            { 
-                Console.WriteLine(allergens)
-            }
+            
         }
         // TODO: Use a Comparer class to sort the 'flavors' array alphabetically by the 'name'
         //  field.
@@ -72,18 +66,10 @@ namespace IceCreamShop
                     return 1;
                 }
             }
-            public class IngredientComparer : IComparer<Ingredient>
-            {
-                public IngredientComparer()
-                    {
-                    }
-            public int Compare(Ingredient x, Ingredient y)
-            {
-                return string.Compare(x.Name, y.Name);
-            }
+           
         }
         }
         // TODO: Print the 'flavors' and 'cones' lists (in a clear manner) to verify the sorting.
     }
-}
+
 
